@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "The Silent Patient",
+        "price": "300",
+        "description": "The Silent Patient is a 2019 psychological thriller novel written by British–Cypriot author Alex Michaelides. The debut novel was published by Celadon Books, a division of Macmillan Publishers, on 5 February 2019. The audiobook version, released on the same date, is read by Louise Brealey and Jack Hawkins.",
+        "quantity": 10,
+        "supplierName": "Abdul Momin",
+        "img": "https://i.ibb.co/mCMDH8b/item1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Where The Forest Meets The Stars",
+        "price": "100",
+        "description": "Where the Forest Meets the Stars will grab you from the very first page and surprise you the whole way through. This is an incredibly original, imaginative, and curious story. Glendy Vanderah has managed to create a world that is very real and, yet, entirely out of the ordinary.”",
+        "quantity": 12,
+        "supplierName": "Siam Hossain",
+        "img": "https://i.ibb.co/KbPK5qt/item2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "When We Believed In Mermaid",
+        "price": "150",
+        "description": "From the author of The Art of Inheriting Secrets comes an emotional new tale of two sisters, an ocean of lies, and a search for the truth.Her sister has been dead for fifteen years when she sees her on the TV news...Josie Bianci was killed years ago on a train during a terrorist attack",
+        "quantity": 8,
+        "supplierName": "Rayhanur Rashid",
+        "img": "https://i.ibb.co/YtSysnJ/item3.jpg"
+    },
+    {
+        "id": 4,
+        "name": "It Ends With Us",
+        "price": "180",
+        "description": "In this “brave and heartbreaking novel that digs its claws into you and doesn’t let go, long after you’ve finished it” (Anna Todd, New York Times bestselling author) from the #1 New York Times",
+        "quantity": 8,
+        "supplierName": "Monira Jahan Tania",
+        "img": "https://i.ibb.co/xzzvcF2/item4.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Ugly Love",
+        "price": "100",
+        "description": "When Tate Collins meets airline pilot Miles Archer, she doesn't think it's love at first sight. They wouldn't even go so far as to consider themselves friends.",
+        "quantity": 6,
+        "supplierName": "MD. Sanwar",
+        "img": "https://i.ibb.co/ZKSWC9J/item5.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Angels And Demons",
+        "price": "300",
+        "description": "Robert, a symbologist, tries his best to stop a secret society from destroying Vatican City. He seeks to decipher various clues in the process, most of which lead him to the four altars of science.",
+        "quantity": 4,
+        "supplierName": "Farhat Snigdho",
+        "img": " https://i.ibb.co/ByN0QZ4/item6.jpg"
+    }
+]

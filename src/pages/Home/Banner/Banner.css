@@ -1,0 +1,40 @@
+.banner {
+    background: url(../../../images/bg.jpeg);
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.banner h2 {
+    color: #330000;
+    font-size: 3em;
+}
+
+.banner .description {
+    color: #330000;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hero-btn {
+    background-color: #330000;
+    color: bisque;
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 10px;
+}
+
+.hero-btn:hover {
+    letter-spacing: 6px;
+    background-color: #330000;
+
+}

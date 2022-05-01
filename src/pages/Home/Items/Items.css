@@ -1,0 +1,27 @@
+.items-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.items-container h1 {
+    color: #330000;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.line {
+    width: 80px;
+    height: 4px;
+    background-color: #330000;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.items {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
