@@ -18,7 +18,7 @@ const Header = () => {
                 <Container>
                     <Navbar.Brand href="/">
                         <img src={logo} height='55px' alt="" />
-                        <span className='fs-2'>
+                        <span className='fs-3'>
                             <span className='text-danger'>B</span><span className='text-info'>oo</span><span className='text-warning'>k</span>s<span className='text-danger'>'</span> <span className='text-warning'>C</span><span className='text-info'>av</span><span className='text-danger'>e</span>
                         </span></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />

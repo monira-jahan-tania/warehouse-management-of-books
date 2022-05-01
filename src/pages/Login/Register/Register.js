@@ -5,6 +5,7 @@ import auth from '../../../firebase.init';
 import Logo from '../../Logo/Logo';
 import './Register.css';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import Loading from '../../Shared/Loading/Loading';
 
 const Register = () => {
     const [
@@ -17,8 +18,11 @@ const Register = () => {
 
 
     const location = useLocation();
-    let from = location.state?.from?.pathname || "/";
     const navigate = useNavigate();
+
+    if (loading) {
+        <Loading />
+    }
 
     const navigateLogin = () => {
         navigate('/login');
