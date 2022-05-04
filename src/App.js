@@ -9,6 +9,10 @@ import Register from './pages/Login/Register/Register';
 import RequireAuth from './pages/Login/RequireAuth/RequireAuth';
 import Item from './pages/Home/Item/Item';
 import Footer from './pages/Shared/Footer/Footer';
+import ItemDetail from './pages/ItemDetail/ItemDetail';
+import ManageItems from './pages/ManageItems/ManageItems/ManageItems';
+import AddItems from './pages/AddItems/AddItems';
+import ManageItem from './pages/ManageItems/ManageItem/ManageItem';
 
 function App() {
   return (
@@ -22,6 +26,31 @@ function App() {
             <Items />
           </RequireAuth>
         }></Route>
+        <Route path='/item/:itemId' element={
+          <RequireAuth>
+            <ItemDetail />
+          </RequireAuth>
+        }></Route>
+        <Route path='/manageItems' element={
+          <RequireAuth>
+            <ManageItems />
+          </RequireAuth>
+        }></Route>
+        <Route path='/addItems' element={
+          <RequireAuth>
+            <AddItems />
+          </RequireAuth>
+        }></Route>
+        {/* <Route path='/manageItems' element={
+          <RequireAuth>
+            <ManageItems />
+          </RequireAuth>
+        }></Route>
+        <Route path='/addItems'> element={
+          <RequireAuth>
+            <AddItems />
+          </RequireAuth>
+        }</Route> */}
         <Route path='/login' element={<Login />}></Route>
         <Route path='/register' element={<Register />}></Route>
       </Routes>
