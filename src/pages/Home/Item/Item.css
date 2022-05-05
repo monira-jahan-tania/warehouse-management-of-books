@@ -16,8 +16,13 @@
 }
 
 .item h3,
+h4,
 h5 {
     color: #330000;
+}
+
+p {
+    font-size: 14px;
 }
 
 .item img {

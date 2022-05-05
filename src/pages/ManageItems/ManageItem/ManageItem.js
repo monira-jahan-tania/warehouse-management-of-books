@@ -8,12 +8,11 @@ const ManageItem = ({ item }) => {
         fetch('http://localhost:5000/item')
             .then(res => res.json())
             .then(data => setItems(data))
-    }, []);
+    }, [items]);
     const handleDeleteItem = (id) => {
-        const proceed = window.confirm('Are you sure?');
+        const proceed = window.confirm('Are you sure to delete this item from stock?');
         if (proceed) {
-            const url = `http://localhost:5000/item/${id}`;
-            fetch(url, {
+            fetch(`http://localhost:5000/item/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -22,6 +21,7 @@ const ManageItem = ({ item }) => {
                     const remaining = items.filter(item => item._id !== id);
                     setItems(remaining);
                 })
+
         }
     }
     return (
@@ -34,7 +34,7 @@ const ManageItem = ({ item }) => {
                 <h6 className='m-0'>Supplier Name: {supplierName}</h6 >
 
             </div>
-            <button className='hero-btn' onClick={() => handleDeleteItem(item._id)}>Delete Item</button>
+            <button className='hero-btn' onClick={() => handleDeleteItem(_id)}>Delete Item</button>
         </div>
     );
 };

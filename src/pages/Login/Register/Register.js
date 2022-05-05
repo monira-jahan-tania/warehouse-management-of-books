@@ -36,6 +36,10 @@ const Register = () => {
         createUserWithEmailAndPassword(email, password);
 
     }
+    let errorElement;
+    if (error) {
+        errorElement = <p className='text-danger'>Error: {error?.message}</p>
+    }
     return (
         <div className='register'>
             <h1>Please Sign Up To See Your Stocks</h1>
@@ -50,6 +54,9 @@ const Register = () => {
                 <br />
                 <input className='btn' type="submit" value="Register" />
             </form>
+            {
+                errorElement
+            }
             <p className='d-flex justify-content-around'>New to <Logo /> ? Please <Link to='/login' onClick={navigateLogin}> Login</Link> Now..</p>
             <SocialLogin></SocialLogin>
         </div>

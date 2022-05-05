@@ -1,15 +1,39 @@
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
-import ManageItem from '../ManageItem/ManageItem';
-import './ManageItems.css';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Navigate, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
 
-const ManageItems = () => {
-
+const MyItems = () => {
+    const [user] = useAuthState(auth);
     const [items, setItems] = useState([]);
+    const navigate = useNavigate();
     useEffect(() => {
-        fetch('http://localhost:5000/itemAll')
+        const email = user.email;
+        console.log(email);
+
+        fetch(`http://localhost:5000/item?email=${email}`,
+            {
+                headers: {
+                    authorization: `bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
             .then(res => res.json())
-            .then(data => setItems(data))
-    }, [items]);
+            .then(data => {
+                try {
+
+                    setItems(data);
+                }
+                catch (error) {
+                    console.log(error.message);
+                    if (error.response.status === 401 || error.response.status === 403) {
+                        signOut(auth);
+                        navigate('/login');
+                    }
+                }
+            })
+    }, [user]);
+
     const handleDeleteItem = (id) => {
         const proceed = window.confirm('Are you sure to delete this item from stock?');
         if (proceed) {
@@ -25,9 +49,10 @@ const ManageItems = () => {
 
         }
     }
+
     return (
         <div>
-            <h1>Manage Items</h1>
+            <h1>My Items: {items.length}</h1>
             <div className="line mx-auto"></div>
             {
                 items.map(item => <div key={item._id} className='manage-item mx-5 mt-3 d-flex align-items-center justify-content-around'>
@@ -43,9 +68,9 @@ const ManageItems = () => {
                     <button className='hero-btn' onClick={() => handleDeleteItem(item._id)}>Delete Item</button>
                 </div>)
             }
-
+            {/* //  onClick={() => handleDeleteItem(item._id)} */}
         </div>
     );
 };
 
-export default ManageItems;
+export default MyItems;

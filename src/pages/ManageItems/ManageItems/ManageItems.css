@@ -1,0 +1,22 @@
+.manage-item {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    /* border: 1px solid #330000; */
+    box-shadow: 10px 10px 5px rgb(178, 180, 182);
+}
+
+h1,
+h4,
+h6 {
+    color: #330000;
+}
+
+.manage-item button {
+    outline: none;
+    border: none;
+}
+
+.manage-item button:hover {
+    letter-spacing: 0;
+}

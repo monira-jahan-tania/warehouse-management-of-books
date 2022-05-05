@@ -4,6 +4,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Logo from '../../Logo/Logo';
 import Loading from '../../Shared/Loading/Loading';
+import SocialLogin from '../SocialLogin/SocialLogin';
+import axios, { Axios } from 'axios';
 import './Login.css';
 
 const Login = () => {
@@ -23,15 +25,22 @@ const Login = () => {
     }
 
     if (user) {
-        navigate(from, { replace: true });
+        // navigate(from, { replace: true });
     }
-    const handleLogin = (event) => {
+    const handleLogin = async (event) => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
-        signInWithEmailAndPassword(email, password)
-    }
+        await signInWithEmailAndPassword(email, password);
+        const { data } = await axios.post('http://localhost:5000/login', { email })
+        localStorage.setItem('accessToken', data.accessToken)
+        navigate(from, { replace: true });
 
+    }
+    let errorElement;
+    if (error) {
+        errorElement = <p className='text-danger'>Error: {error?.message}</p>
+    }
     return (
         <div className='login'>
             <h1>Please Log In </h1>
@@ -44,7 +53,11 @@ const Login = () => {
                 <br />
                 <input className='btn' type="submit" value="Login" />
             </form>
+            {
+                errorElement
+            }
             <p className='d-flex justify-content-around'>New to <Logo />? Please <Link to='/register'> Register</Link> Now..</p>
+            <SocialLogin />
         </div>
     );
 };

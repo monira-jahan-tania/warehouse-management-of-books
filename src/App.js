@@ -13,6 +13,8 @@ import ItemDetail from './pages/ItemDetail/ItemDetail';
 import ManageItems from './pages/ManageItems/ManageItems/ManageItems';
 import AddItems from './pages/AddItems/AddItems';
 import ManageItem from './pages/ManageItems/ManageItem/ManageItem';
+import NotFound from './pages/NotFound/NotFound';
+import MyItems from './pages/MyItems/MyItems';
 
 function App() {
   return (
@@ -41,6 +43,11 @@ function App() {
             <AddItems />
           </RequireAuth>
         }></Route>
+        <Route path='/myItems' element={
+          <RequireAuth>
+            <MyItems />
+          </RequireAuth>
+        }></Route>
         {/* <Route path='/manageItems' element={
           <RequireAuth>
             <ManageItems />
@@ -51,6 +58,7 @@ function App() {
             <AddItems />
           </RequireAuth>
         }</Route> */}
+        <Route path='*' element={<NotFound />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/register' element={<Register />}></Route>
       </Routes>
