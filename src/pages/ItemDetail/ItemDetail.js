@@ -6,31 +6,55 @@ const ItemDetail = () => {
     const { itemId } = useParams();
 
     const [item, setItem] = useState({});
-    // const [itemQuantity, setItemQuantity] = useState(item.quantity);
     useEffect(() => {
         fetch(`http://localhost:5000/item/${itemId}`)
             .then(res => res.json())
             .then(data => setItem(data))
-    }, [itemId]);
+    }, [item]);
 
     // console.log(itemQuantity);
+    const handleQuantity = (quantity) => {
 
-    const handleQuantity = (itemQuantity) => {
-        const newQuantity = parseInt(itemQuantity) - 1;
-        item.quantity = newQuantity;
-        // setItem(item);
-        const url = `http://localhost:5000/item/${itemId}`
-        console.log(url);
-        fetch(url, {
-            method: 'PATCH',
+        const newQuantity = parseInt(quantity) - 1;
+
+
+        console.log(newQuantity);
+        fetch(`http://localhost:5000/item/${itemId}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(item)
+            body: JSON.stringify({ newQuantity })
         })
             .then(res => res.json())
-            .then(data => console.log(data.newQuantity))
+            .then(data => console.log(data))
+
     }
+    const handleRestock = (quantity) => {
+        // event.preventDefault();
+        const addedQuantity = document.getElementById('quantity').value;
+        if (addedQuantity > 0) {
+            const newQuantity = parseInt(quantity) + parseInt(addedQuantity)
+            console.log(newQuantity);
+            fetch(`http://localhost:5000/item/${itemId}`, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({ newQuantity })
+            })
+                .then(res => res.json())
+                .then(data => console.log(data))
+            document.getElementById('quantity').value = " ";
+        }
+        else {
+            window.alert('Please insert an amount of greater than 0');
+            document.getElementById('quantity').value = " ";
+        }
+
+
+    }
+
     return (
         <div>
             <div className='item mt-5 mx-auto pt-2 w-50'>
@@ -46,10 +70,11 @@ const ItemDetail = () => {
                 </div>
             </div>
             <div className='restock'>
-                <form >
-                    <input name='quantity' type="number" placeholder='Restock Quanity' />
-                    <button className='hero-btn'>Restock</button>
-                </form>
+                {/* <form onSubmit={() => handleRestock(item.quantity)}> */}
+                <input id='quantity' name='quantity' type="number" placeholder='Restock Quanity' />
+                <button className='btn hero-btn' onClick={() => handleRestock(item.quantity)}>Restock</button>
+                {/* <input className='btn' type="submit" value="Restock" /> */}
+                {/* </form> */}
             </div>
             <Link to='/manageItems'><button className='btn hero-btn mt-3'>Manage Items</button></Link>
         </div>

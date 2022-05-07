@@ -13,7 +13,7 @@ const Items = () => {
     return (
         <div className='items-container' id='items'>
             <h1>Stocked Items</h1>
-            <h2>{items.length}</h2>
+            {/* <h2>{items.length}</h2> */}
             <div className='line'></div>
             <div className='items'>
                 {

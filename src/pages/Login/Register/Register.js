@@ -6,6 +6,8 @@ import Logo from '../../Logo/Logo';
 import './Register.css';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import Loading from '../../Shared/Loading/Loading';
+import { toast, ToastContainer } from 'react-toastify';
+import useToken from '../../../Hooks/useToken';
 
 const Register = () => {
     const [
@@ -15,7 +17,7 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
-
+    const [token] = useToken(user);
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -35,6 +37,9 @@ const Register = () => {
         const password = event.target.password.value;
         createUserWithEmailAndPassword(email, password);
 
+    }
+    if (token) {
+        navigate('/home');
     }
     let errorElement;
     if (error) {
@@ -59,6 +64,8 @@ const Register = () => {
             }
             <p className='d-flex justify-content-around'>New to <Logo /> ? Please <Link to='/login' onClick={navigateLogin}> Login</Link> Now..</p>
             <SocialLogin></SocialLogin>
+
+            <ToastContainer />
         </div>
     );
 };

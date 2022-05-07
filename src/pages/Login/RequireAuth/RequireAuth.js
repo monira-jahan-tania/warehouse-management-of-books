@@ -4,6 +4,7 @@ import { useAuthState, useSendEmailVerification } from 'react-firebase-hooks/aut
 import { Navigate, useLocation } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
+import 'react-toastify/dist/ReactToastify.css';
 
 const RequireAuth = ({ children }) => {
     const [user, loading] = useAuthState(auth);
@@ -17,8 +18,9 @@ const RequireAuth = ({ children }) => {
     if (!user) {
         return <Navigate to="/login" state={{ from: location }} replace />;
     }
-    if (user) {
+    if (user.providerData[0]?.providerId === 'password' && !user.emailVerified) {
         <div>
+            <h5 className='text-success'> Please Verify your email address</h5>
             <button
                 className='btn'
                 onClick={async () => {
