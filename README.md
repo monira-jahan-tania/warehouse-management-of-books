@@ -1,6 +1,7 @@
 # Books' Cave
 
-https://warehouse-management-b6820.web.app/blogs
+<!-- https://warehouse-management-b6820.web.app -->
+https://warehouse-management-b6820.web.app/
 
 This project was bootstrapped with [Create React App]
 

@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import useItems from '../../../Hooks/useItems';
 import ManageItem from '../ManageItem/ManageItem';
 import './ManageItems.css';
 
 const ManageItems = () => {
 
-    const [items, setItems] = useState([]);
-    useEffect(() => {
-        fetch('https://hidden-brook-58395.herokuapp.com/itemAll')
-            .then(res => res.json())
-            .then(data => setItems(data))
-    }, [items]);
+    const [items, setItems] = useItems();
+
     const handleDeleteItem = (id) => {
         const proceed = window.confirm('Are you sure to delete this item from stock?');
         if (proceed) {

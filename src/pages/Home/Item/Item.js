@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate, useNavigationType } from 'react-router-dom';
+import { Link, useNavigate, useNavigationType } from 'react-router-dom';
 import './Item.css';
 
 const Item = ({ item }) => {

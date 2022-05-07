@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import useItems from '../../../Hooks/useItems';
 import Item from '../Item/Item';
 import './Items.css';
@@ -19,6 +20,7 @@ const Items = () => {
                     ></Item>)
                 }
             </div>
+            <Link to='/manageItems'><button className='hero-btn mt-3'>Manage Item</button></Link>
         </div>
     );
 };

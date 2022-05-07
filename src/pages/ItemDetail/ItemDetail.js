@@ -70,11 +70,10 @@ const ItemDetail = () => {
                 </div>
             </div>
             <div className='restock'>
-                {/* <form onSubmit={() => handleRestock(item.quantity)}> */}
+
                 <input id='quantity' name='quantity' type="number" placeholder='Restock Quanity' />
                 <button className='btn hero-btn' onClick={() => handleRestock(item.quantity)}>Restock</button>
-                {/* <input className='btn' type="submit" value="Restock" /> */}
-                {/* </form> */}
+
             </div>
             <Link to='/manageItems'><button className='btn hero-btn mt-3'>Manage Items</button></Link>
         </div>
