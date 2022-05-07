@@ -7,11 +7,13 @@ This project was bootstrapped with [Create React App]
 # Description
 this is a website for stocking books on various subject for the specifice and verified inventors. 
  Here on the nav bar :
- . All items shows all products of all inventors or public for which one does not need to be verified.
- . Here all other routes only works for verified inventors.
-   . My items shows the items added by the current logged user where he can delet them.
-   . Add items also works for the logged user for adding newitems.
-   . Manage items works for all verified items.
+ <ul>
+ <li>All items shows all products of all inventors or public for which one does not need to be verified.</li>
+ <li>Here all other routes only works for verified inventors.</li>
+ <li>My items shows the items added by the current logged user where he can delet them.</li>
+ <li>Add items also works for the logged user for adding newitems.</li>
+ <li>Manage items works for all verified items.</li>
+</ul>   
 
 
 
