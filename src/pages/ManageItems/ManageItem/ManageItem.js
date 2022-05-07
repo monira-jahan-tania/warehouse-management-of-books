@@ -5,14 +5,14 @@ const ManageItem = ({ item }) => {
     const { _id, img, name, quantity, price, supplierName } = item
     const [items, setItems] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/item')
+        fetch('https://hidden-brook-58395.herokuapp.com/item')
             .then(res => res.json())
             .then(data => setItems(data))
     }, [items]);
     const handleDeleteItem = (id) => {
         const proceed = window.confirm('Are you sure to delete this item from stock?');
         if (proceed) {
-            fetch(`http://localhost:5000/item/${id}`, {
+            fetch(`https://hidden-brook-58395.herokuapp.com/item/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

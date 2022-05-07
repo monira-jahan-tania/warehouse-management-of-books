@@ -38,3 +38,9 @@ a {
     background-color: #330000;
 
 }
+
+@media (max-width: 688px) {
+    .banner h2 {
+        font-size: 2rem;
+    }
+}

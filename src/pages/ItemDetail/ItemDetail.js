@@ -7,7 +7,7 @@ const ItemDetail = () => {
 
     const [item, setItem] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/item/${itemId}`)
+        fetch(`https://hidden-brook-58395.herokuapp.com/item/${itemId}`)
             .then(res => res.json())
             .then(data => setItem(data))
     }, [item]);
@@ -19,7 +19,7 @@ const ItemDetail = () => {
 
 
         console.log(newQuantity);
-        fetch(`http://localhost:5000/item/${itemId}`, {
+        fetch(`https://hidden-brook-58395.herokuapp.com/item/${itemId}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -36,7 +36,7 @@ const ItemDetail = () => {
         if (addedQuantity > 0) {
             const newQuantity = parseInt(quantity) + parseInt(addedQuantity)
             console.log(newQuantity);
-            fetch(`http://localhost:5000/item/${itemId}`, {
+            fetch(`https://hidden-brook-58395.herokuapp.com/item/${itemId}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

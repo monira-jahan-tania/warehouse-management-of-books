@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import ManageItem from '../ManageItem/ManageItem';
 import './ManageItems.css';
 
@@ -6,14 +7,14 @@ const ManageItems = () => {
 
     const [items, setItems] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/itemAll')
+        fetch('https://hidden-brook-58395.herokuapp.com/itemAll')
             .then(res => res.json())
             .then(data => setItems(data))
     }, [items]);
     const handleDeleteItem = (id) => {
         const proceed = window.confirm('Are you sure to delete this item from stock?');
         if (proceed) {
-            fetch(`http://localhost:5000/item/${id}`, {
+            fetch(`https://hidden-brook-58395.herokuapp.com/item/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -43,7 +44,7 @@ const ManageItems = () => {
                     <button className='hero-btn' onClick={() => handleDeleteItem(item._id)}>Delete Item</button>
                 </div>)
             }
-
+            <Link to='/addItems'><button className='hero-btn mt-3'>Add New Item</button></Link>
         </div>
     );
 };

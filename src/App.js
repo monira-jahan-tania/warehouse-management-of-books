@@ -17,6 +17,7 @@ import NotFound from './pages/NotFound/NotFound';
 import MyItems from './pages/MyItems/MyItems';
 import Blogs from './pages/Blogs/Blogs';
 import 'react-toastify/dist/ReactToastify.css';
+import AllItems from './pages/AllItems/AllItems';
 
 function App() {
   return (
@@ -25,12 +26,13 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/home' element={<Home />}></Route>
+        <Route path='allItems' element={<AllItems />}></Route>
         <Route path='/blogs' element={<Blogs />}></Route>
-        <Route path='/items' element={
+        {/* <Route path='/items' element={
           <RequireAuth>
             <Items />
           </RequireAuth>
-        }></Route>
+        }></Route> */}
         <Route path='/item/:itemId' element={
           <RequireAuth>
             <ItemDetail />

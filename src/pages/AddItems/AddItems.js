@@ -11,7 +11,7 @@ const AddItems = () => {
 
     const onSubmit = data => {
         console.log(data);
-        const url = `http://localhost:5000/item`;
+        const url = `https://hidden-brook-58395.herokuapp.com/item`;
         fetch(url, {
             method: 'POST',
             headers: {

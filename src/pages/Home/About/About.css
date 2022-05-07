@@ -10,3 +10,19 @@
     align-items: center;
     justify-content: center;
 }
+
+@media (max-width: 688px) {
+    .about {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 20px;
+    }
+
+    .about-info p {
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .about img {
+        width: 300px;
+    }
+}

@@ -3,7 +3,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
     /* border: 1px solid #330000; */
-    box-shadow: 10px 10px 5px rgb(178, 180, 182);
+    box-shadow: 0 5px 35px rgb(0 0 0 / 30%);
 }
 
 h1,
@@ -12,7 +12,8 @@ h6 {
     color: #330000;
 }
 
-.manage-item button {
+.manage-item button,
+.hero-btn {
     outline: none;
     border: none;
 }

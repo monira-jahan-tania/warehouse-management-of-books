@@ -12,7 +12,7 @@ const MyItems = () => {
         const email = user.email;
         console.log(email);
 
-        fetch(`http://localhost:5000/item?email=${email}`,
+        fetch(`https://hidden-brook-58395.herokuapp.com/item?email=${email}`,
             {
                 headers: {
                     authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -37,7 +37,7 @@ const MyItems = () => {
     const handleDeleteItem = (id) => {
         const proceed = window.confirm('Are you sure to delete this item from stock?');
         if (proceed) {
-            fetch(`http://localhost:5000/item/${id}`, {
+            fetch(`https://hidden-brook-58395.herokuapp.com/item/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

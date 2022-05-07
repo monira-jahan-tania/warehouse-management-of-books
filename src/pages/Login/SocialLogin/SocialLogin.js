@@ -2,10 +2,12 @@ import React from 'react';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import useToken from '../../../Hooks/useToken';
 import googleLogo from '../../../images/social/google.png'
 
 const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [token] = useToken(user);
 
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
@@ -18,10 +20,12 @@ const SocialLogin = () => {
         </div>
     }
 
-    if (user) {
+    // if (user) {
+    //     navigate(from, { replace: true });
+    // }
+    if (token) {
         navigate(from, { replace: true });
     }
-
     return (
         <div>
             <div className='d-flex align-items-center '>

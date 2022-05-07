@@ -26,3 +26,9 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px;
 }
+
+@media (max-width: 688px) {
+    .items {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

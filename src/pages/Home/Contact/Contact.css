@@ -1,0 +1,71 @@
+ /* .contact {
+     margin: 20px 0 0 0;
+ } */
+
+ .contact-heading {
+     margin-top: 30px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .contact-form {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     grid-gap: 100px;
+     margin: 50px 30px;
+ }
+
+ .message h3 {
+     color: #330000;
+     font-size: 1.2em;
+     font-weight: 500;
+ }
+
+ .message {
+     width: 500px;
+     padding: 30px 50px;
+     background: #fff;
+     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+     max-width: 500px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .message input,
+ .message textarea {
+     width: 100%;
+     border: 1px solid #555;
+     padding: 10px;
+     color: #111;
+     outline: none;
+     font-size: 16px;
+     font-weight: 300;
+     resize: none;
+     margin-top: 20px;
+ }
+
+ .message .btn {
+     background-color: #330000;
+     color: aliceblue;
+     margin-bottom: 10px;
+
+ }
+
+
+ @media (max-width: 688px) {
+     .contact-form {
+         grid-template-columns: repeat(1, 1fr);
+     }
+
+     .message {
+         max-width: 400px;
+     }
+
+     .contact-form img {
+         width: 90%;
+     }
+ }

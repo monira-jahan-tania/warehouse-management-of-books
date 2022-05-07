@@ -3,7 +3,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
     /* border: 1px solid #330000; */
-    box-shadow: 10px 10px 5px rgb(178, 180, 182);
+
 }
 
 h1,
