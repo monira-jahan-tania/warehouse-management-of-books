@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Navigate, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import './MyItems.css';
 
 const MyItems = () => {
     const [user] = useAuthState(auth);
@@ -55,7 +56,7 @@ const MyItems = () => {
             <h1>My Items: {items.length}</h1>
             <div className="line mx-auto"></div>
             {
-                items.map(item => <div key={item._id} className='manage-item mx-5 mt-3 d-flex align-items-center justify-content-around'>
+                items.map(item => <div key={item._id} className='manage-item mx-5 mt-3'>
 
                     <div><img width='100px' height='100px' src={item.img} alt="" /></div>
                     <div className='item-description'>
@@ -65,7 +66,9 @@ const MyItems = () => {
                         <h6 className='m-0'>Supplier Name: {item.supplierName}</h6 >
 
                     </div>
-                    <button className='hero-btn' onClick={() => handleDeleteItem(item._id)}>Delete Item</button>
+                    <div className='d-flex align-items-center justify-content-center'>
+                        <button className='hero-btn' onClick={() => handleDeleteItem(item._id)}>Delete Item</button>
+                    </div>
                 </div>)
             }
             {/* //  onClick={() => handleDeleteItem(item._id)} */}

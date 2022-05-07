@@ -31,7 +31,7 @@ const ManageItems = () => {
             <h1>Manage Items</h1>
             <div className="line mx-auto"></div>
             {
-                items.map(item => <div key={item._id} className='manage-item mx-5 mt-3 d-flex align-items-center justify-content-around'>
+                items.map(item => <div key={item._id} className='manage-item mx-5 mt-3 '>
 
                     <div><img width='100px' height='100px' src={item.img} alt="" /></div>
                     <div className='item-description'>
@@ -41,7 +41,9 @@ const ManageItems = () => {
                         <h6 className='m-0'>Supplier Name: {item.supplierName}</h6 >
 
                     </div>
-                    <button className='hero-btn' onClick={() => handleDeleteItem(item._id)}>Delete Item</button>
+                    <div className='d-flex align-items-center justify-content-center'>
+                        <button className='hero-btn ' onClick={() => handleDeleteItem(item._id)}>Delete Item</button>
+                    </div>
                 </div>)
             }
             <Link to='/addItems'><button className='hero-btn mt-3'>Add New Item</button></Link>

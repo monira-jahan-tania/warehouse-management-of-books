@@ -16,8 +16,28 @@ h6 {
 .hero-btn {
     outline: none;
     border: none;
+
 }
 
 .manage-item button:hover {
     letter-spacing: 0;
+}
+
+@media (max-width: 688px) {
+    .manage-item {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 20px;
+    }
+
+    .item-description h4 {
+        font-size: 15px;
+    }
+
+    .item-description h6 {
+        font-size: 12px;
+    }
+
+    .manage-item .hero-btn {
+        font-size: 12px;
+    }
 }
