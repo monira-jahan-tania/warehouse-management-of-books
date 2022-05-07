@@ -39,6 +39,9 @@ const SocialLogin = () => {
                 <img width="20px" src={googleLogo} alt="" />
                 <span className='mx-3'> Google Sign In</span>
             </button>
+            {
+                errorElement
+            }
         </div>
     );
 };

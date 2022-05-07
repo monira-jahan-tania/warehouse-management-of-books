@@ -4,8 +4,9 @@ import useItems from '../../../Hooks/useItems';
 import ManageItem from '../ManageItem/ManageItem';
 import './ManageItems.css';
 
-const ManageItems = () => {
 
+//for manage items which is seperate route
+const ManageItems = () => {
     const [items, setItems] = useItems();
 
     const handleDeleteItem = (id) => {

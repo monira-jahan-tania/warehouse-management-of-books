@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import './itemDetail.css';
 
+
+/// for inventory:id route
 const ItemDetail = () => {
     const { itemId } = useParams();
 

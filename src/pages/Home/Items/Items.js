@@ -4,6 +4,8 @@ import useItems from '../../../Hooks/useItems';
 import Item from '../Item/Item';
 import './Items.css';
 
+
+//to show all items 
 const Items = () => {
     const [items, setItems] = useItems();
 
