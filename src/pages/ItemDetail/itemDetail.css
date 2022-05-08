@@ -11,3 +11,9 @@
     outline: none;
     margin: 0 10px;
 }
+
+@media (max-width: 688px) {
+    .restock input {
+        width: 90%;
+    }
+}
