@@ -17,19 +17,24 @@ const ItemDetail = () => {
     // console.log(itemQuantity);
     const handleQuantity = (quantity) => {
 
-        const newQuantity = parseInt(quantity) - 1;
+        if (quantity > 0) {
+            const newQuantity = parseInt(quantity) - 1;
 
 
-        console.log(newQuantity);
-        fetch(`https://hidden-brook-58395.herokuapp.com/item/${itemId}`, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify({ newQuantity })
-        })
-            .then(res => res.json())
-            .then(data => console.log(data))
+            console.log(newQuantity);
+            fetch(`https://hidden-brook-58395.herokuapp.com/item/${itemId}`, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({ newQuantity })
+            })
+                .then(res => res.json())
+                .then(data => console.log(data))
+        }
+        else {
+            window.alert("This item has been sold out");
+        }
 
     }
     const handleRestock = (quantity) => {
