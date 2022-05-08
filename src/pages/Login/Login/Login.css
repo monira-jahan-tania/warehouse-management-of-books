@@ -44,3 +44,13 @@
     color: #330000;
     text-decoration: none;
 }
+
+@media (max-width: 688px) {
+    .login form input {
+        width: 300px;
+    }
+
+    .login form .line {
+        width: 300px;
+    }
+}
