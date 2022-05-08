@@ -47,3 +47,20 @@ p {
         font-weight: 500;
     }
 }
+
+@media (max-width: 280px) {
+    .item {
+        width: 100%;
+    }
+
+    .item h3,
+    h4,
+    h5 {
+        font-size: 15px;
+    }
+
+    .item-description p {
+        font-size: 10px;
+        font-weight: 500;
+    }
+}

@@ -54,3 +54,13 @@
         width: 300px;
     }
 }
+
+@media (max-width: 280px) {
+    .register form input {
+        width: 250px;
+    }
+
+    .register form .line {
+        width: 250px;
+    }
+}
